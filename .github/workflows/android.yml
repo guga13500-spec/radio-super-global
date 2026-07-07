@@ -19,13 +19,11 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Setup Gradle
+    - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
       with:
         gradle-version: 7.5
-
-    - name: Build with Gradle
-      run: gradle assembleRelease
+        arguments: assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
